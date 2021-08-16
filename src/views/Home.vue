@@ -1,5 +1,6 @@
 <template>
   <main v-if="!loading">
+    <CountrySelect @get-country="getCountryData" :countries="countries" />
     <DataTitle :text="title" :dataDate="dataDate" />
     <DataBoxes :stats="stats" />
   </main>
@@ -12,11 +13,13 @@
 <script>
 import DataTitle from "@/components/DataTitle";
 import DataBoxes from "@/components/DataBoxes";
+import CountrySelect from "@/components/CountrySelect";
 export default {
   name: "Home",
   components: {
     DataTitle,
     DataBoxes,
+    CountrySelect,
   },
   data() {
     return {
@@ -34,10 +37,13 @@ export default {
       const data = await res.json();
       return data;
     },
+    getCountryData(country) {
+      this.stats = country;
+      this.title = country.Country;
+    },
   },
   async created() {
     const data = await this.fetchCovidData();
-    console.log(data);
     this.dataDate = data.Date;
     this.stats = data.Global;
     this.countries = data.Countries;
