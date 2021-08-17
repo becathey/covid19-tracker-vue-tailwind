@@ -1,6 +1,15 @@
 <template>
-  <main v-if="!loading">
-    <CountrySelect @get-country="getCountryData" :countries="countries" />
+  <main v-if="!loading" class="mb-5">
+    <div class="flex align-center justify-center mb-10">
+      <CountrySelect @get-country="getCountryData" :countries="countries" />
+      <button
+        v-if="stats.Country"
+        @click="clearCountryData"
+        class="flex-initial rounded p-3 bg-green-700 text-white focus:outline-none hover:bg-green-600"
+      >
+        Clear Country
+      </button>
+    </div>
     <DataTitle :text="title" :dataDate="dataDate" />
     <DataBoxes :stats="stats" />
   </main>
@@ -40,6 +49,13 @@ export default {
     getCountryData(country) {
       this.stats = country;
       this.title = country.Country;
+    },
+    async clearCountryData() {
+      this.loading = true;
+      const data = await this.fetchCovidData();
+      this.title = "Global";
+      this.stats = data.Global;
+      this.loading = false;
     },
   },
   async created() {
