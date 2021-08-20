@@ -1,6 +1,6 @@
 <template>
   <select
-    class="form-select flex-auto mr-3 p-3 border rounded"
+    class="form-select flex-auto sm:mr-3 mt-2 p-3 border rounded"
     v-model="selected"
     @change="onChange()"
   >
