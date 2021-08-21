@@ -2,7 +2,7 @@
 
 ## Project description
 
-Covid-19 Tracker provides statistics on Covid-19 cases and deaths. It is built with Vue.js, and uses Tailwind for styling.
+COVID-19 Tracker provides statistics on COVID-19 cases and deaths. It is built with Vue.js, and uses Tailwind for styling.
 
 ## Project setup
 
