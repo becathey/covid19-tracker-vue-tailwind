@@ -1,27 +1,27 @@
-# 210814_covid-tracker
+# COVID-19 Tracker
 
-## Project description
+COVID-19 Tracker provides statistics on COVID-19 cases and deaths, both globally and by individual country. The project is built with Vue.js, and uses Tailwind CSS for styling.
 
-COVID-19 Tracker provides statistics on COVID-19 cases and deaths. It is built with Vue.js, and uses Tailwind for styling.
+## Project Setup
 
-## Project setup
+To install the project dependencies, in the project directory run:
 
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+## Run the App
+
+To compile the application and hot-reload when edits are made during development, run:
 
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+## Build the App
+
+To compile the application and minify the code for production, run:
 
 ```
 npm run build
 ```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
